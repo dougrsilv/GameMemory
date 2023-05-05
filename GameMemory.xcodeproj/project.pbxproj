@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA66A4882A05428C0072FDEC /* ProcessData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA66A4872A05428C0072FDEC /* ProcessData.swift */; };
+		DAB228CB2A057AC9005EB72A /* HomeGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB228CA2A057AC9005EB72A /* HomeGameViewModel.swift */; };
+		DAB228CD2A057C20005EB72A /* HomeGameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB228CC2A057C20005EB72A /* HomeGameModel.swift */; };
 		DAC4581729F85A95000E0E4F /* PlayGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC4581629F85A95000E0E4F /* PlayGameViewController.swift */; };
 		DAC4581929F85CA7000E0E4F /* PlayGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC4581829F85CA7000E0E4F /* PlayGameView.swift */; };
 		DAC4581B29F89409000E0E4F /* ButtonsGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC4581A29F89409000E0E4F /* ButtonsGameView.swift */; };
@@ -24,7 +27,6 @@
 		DACD2AA929F94BB0001E51DF /* ButtonsGameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACD2AA829F94BB0001E51DF /* ButtonsGameCell.swift */; };
 		DACD2CC829F99BA300C7B83C /* PlayGamesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACD2CC729F99BA300C7B83C /* PlayGamesViewModel.swift */; };
 		DACD2CCB29F99C2B00C7B83C /* PlayGameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACD2CCA29F99C2B00C7B83C /* PlayGameModel.swift */; };
-		DACD2CCE29F9ABCC00C7B83C /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACD2CCD29F9ABCC00C7B83C /* UIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +47,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DA66A4872A05428C0072FDEC /* ProcessData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessData.swift; sourceTree = "<group>"; };
+		DAB228CA2A057AC9005EB72A /* HomeGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeGameViewModel.swift; sourceTree = "<group>"; };
+		DAB228CC2A057C20005EB72A /* HomeGameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeGameModel.swift; sourceTree = "<group>"; };
 		DAC4581629F85A95000E0E4F /* PlayGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayGameViewController.swift; sourceTree = "<group>"; };
 		DAC4581829F85CA7000E0E4F /* PlayGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayGameView.swift; sourceTree = "<group>"; };
 		DAC4581A29F89409000E0E4F /* ButtonsGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsGameView.swift; sourceTree = "<group>"; };
@@ -66,7 +71,6 @@
 		DACD2AA829F94BB0001E51DF /* ButtonsGameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsGameCell.swift; sourceTree = "<group>"; };
 		DACD2CC729F99BA300C7B83C /* PlayGamesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayGamesViewModel.swift; sourceTree = "<group>"; };
 		DACD2CCA29F99C2B00C7B83C /* PlayGameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayGameModel.swift; sourceTree = "<group>"; };
-		DACD2CCD29F9ABCC00C7B83C /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,7 +153,7 @@
 		DACB43EF29F83397007012FD /* Feature */ = {
 			isa = PBXGroup;
 			children = (
-				DACD2CCC29F9ABB400C7B83C /* Extensions */,
+				DAE8B3312A047B9E00406119 /* ProcessData */,
 				DACD2CC929F99C0E00C7B83C /* Model */,
 				DACB43F529F83B49007012FD /* PlayGame */,
 				DACB43F029F833A2007012FD /* HomeGame */,
@@ -162,6 +166,7 @@
 			children = (
 				DACB43F129F833C2007012FD /* HomeGameViewController.swift */,
 				DACB43F329F83473007012FD /* HomeGameView.swift */,
+				DAB228CA2A057AC9005EB72A /* HomeGameViewModel.swift */,
 			);
 			path = HomeGame;
 			sourceTree = "<group>";
@@ -182,16 +187,17 @@
 			isa = PBXGroup;
 			children = (
 				DACD2CCA29F99C2B00C7B83C /* PlayGameModel.swift */,
+				DAB228CC2A057C20005EB72A /* HomeGameModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
 		};
-		DACD2CCC29F9ABB400C7B83C /* Extensions */ = {
+		DAE8B3312A047B9E00406119 /* ProcessData */ = {
 			isa = PBXGroup;
 			children = (
-				DACD2CCD29F9ABCC00C7B83C /* UIView.swift */,
+				DA66A4872A05428C0072FDEC /* ProcessData.swift */,
 			);
-			path = Extensions;
+			path = ProcessData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -328,15 +334,17 @@
 				DACB43C429F832B5007012FD /* ViewController.swift in Sources */,
 				DACB43F429F83473007012FD /* HomeGameView.swift in Sources */,
 				DAC4581729F85A95000E0E4F /* PlayGameViewController.swift in Sources */,
+				DAB228CB2A057AC9005EB72A /* HomeGameViewModel.swift in Sources */,
 				DACB43F229F833C2007012FD /* HomeGameViewController.swift in Sources */,
-				DACD2CCE29F9ABCC00C7B83C /* UIView.swift in Sources */,
 				DAC4581B29F89409000E0E4F /* ButtonsGameView.swift in Sources */,
 				DACB43C029F832B5007012FD /* AppDelegate.swift in Sources */,
 				DACD2CC829F99BA300C7B83C /* PlayGamesViewModel.swift in Sources */,
 				DAC4581929F85CA7000E0E4F /* PlayGameView.swift in Sources */,
 				DACB43C229F832B5007012FD /* SceneDelegate.swift in Sources */,
+				DAB228CD2A057C20005EB72A /* HomeGameModel.swift in Sources */,
 				DACD2AA929F94BB0001E51DF /* ButtonsGameCell.swift in Sources */,
 				DACD2CCB29F99C2B00C7B83C /* PlayGameModel.swift in Sources */,
+				DA66A4882A05428C0072FDEC /* ProcessData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

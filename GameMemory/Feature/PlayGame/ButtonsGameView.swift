@@ -60,6 +60,28 @@ class ButtonsGameView: UIView {
         playGame = game
         collectionViewGames.reloadData()
     }
+    
+    func delay(_ delay: Double, closure: @escaping ()->()) {
+        DispatchQueue.main.asyncAfter(
+            deadline: DispatchTime.now() + Double(Int64(delay * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC), execute: closure)
+    }
+    
+    func viewBlink(list: [Int]) {
+        
+        var i = 0
+        
+        while i < list.count {
+            let lis = list[i]
+            delay(Double(3 * i)) {
+                let cell = self.collectionViewGames.cellForItem(at: .init(row: lis, section: 0)) as! ButtonsGameCell
+                cell.flashMemory.backgroundColor = .yellow
+                DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
+                    cell.flashMemory.backgroundColor = .red
+                }
+            }
+            i += 1
+        }
+    }
 }
 
 // MARK: - UICollectionViewDelegate
@@ -72,8 +94,6 @@ extension ButtonsGameView: UICollectionViewDelegate, UICollectionViewDataSource,
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cell, for: indexPath) as! ButtonsGameCell
-        
-        //cell.setupData(setup: playGame[indexPath.row])
         return cell
     }
     

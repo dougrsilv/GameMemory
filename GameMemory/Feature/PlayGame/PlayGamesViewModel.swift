@@ -5,7 +5,7 @@
 //  Created by Douglas  Rodrigues  on 26/04/23.
 //
 
-import Foundation
+import UIKit
 
 protocol PlayGamesViewModelOutput: AnyObject {
     func onPlayGame(list: [PlayGameModel])
@@ -15,7 +15,8 @@ class PlayGamesViewModel {
     
     private var playGameModel: [PlayGameModel] = []
     private var num: String = ""
-    private var newSelectNumber: [Int] = []
+    var newSelectNumber: [Int] = []
+    var optionUser: [Int] = []
     weak var delegate: PlayGamesViewModelOutput?
     
     init(count: String) {
@@ -35,14 +36,21 @@ class PlayGamesViewModel {
         delegate?.onPlayGame(list: playGameModel)
     }
     
-    func luckyNumber() -> Int {
-        guard let value = Int(num) else { return 0 }
-        return Int.random(in: 0...value - 1)
+    func startNumber() {
+        if let value = Int(num) {
+            let list = Int.random(in: 0...value - 1)
+            newSelectNumber.append(list)
+        }
     }
     
-    func addNumberSelect(add: Int) {
-        newSelectNumber.append(add)
-        print(newSelectNumber)
+    func equalReults(count: Int) -> Bool? {
+        if newSelectNumber.count == count {
+            return newSelectNumber.elementsEqual(optionUser)
+        }
+        return nil
     }
     
+    func processData(count: Int) {
+        _ = ProcessData(viewModel: count)
+    }
 }

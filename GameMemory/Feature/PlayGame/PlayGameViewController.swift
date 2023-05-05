@@ -33,14 +33,18 @@ class PlayGameViewController: UIViewController {
         playGameView.delegate = self
         viewModel.delegate = self
         viewModel.fetchPlayGame()
+        startGame()
     }
     
     // MARK: - Functions
     
-    private func showAlertWithOptions() {
-        let alert = UIAlertController(title: "Alerta", message: "Selecione uma Opção", preferredStyle: .alert)
+    private func showAlertWithOptions(title: String, text: String) {
+        let alert = UIAlertController(title: title, message: text, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Reiniciar", style: .default, handler: { alert in
-            //
+            self.viewModel.newSelectNumber.removeAll()
+            self.viewModel.optionUser.removeAll()
+            self.playGameView.LevelGame.text = String(self.viewModel.newSelectNumber.count)
+            self.startGame()
         }))
         
         alert.addAction(UIAlertAction(title: "Sair", style: .default, handler: { alert in
@@ -50,21 +54,37 @@ class PlayGameViewController: UIViewController {
         
         self.present(alert, animated: true)
     }
+    
+    private func startGame() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.viewModel.startNumber()
+            self.playGameView.buttonsGameView.viewBlink(list: self.viewModel.newSelectNumber)
+        }
+    }
 }
 
 // MARK: - PlayGameViewDelegate
 
 extension PlayGameViewController: PlayGameViewDelegate {
-    func clickSelectCorrectButton(Number: Int) {
-
-        if viewModel.luckyNumber() == Number {
-            print("Parabéns acertou!!!!")
-            viewModel.addNumberSelect(add: Number)
+    func clickSelectCorrectButton(number: Int) {
+        
+        viewModel.optionUser.append(number)
+                
+        switch viewModel.equalReults(count: viewModel.optionUser.count) {
+        case true:
+            viewModel.optionUser.removeAll()
+            startGame()
+            playGameView.LevelGame.text = String(viewModel.newSelectNumber.count)
+            viewModel.processData(count: viewModel.newSelectNumber.count)
+        case false:
+            showAlertWithOptions(title: "Não Foi dessa vez", text: "Selecione uma Opção")
+        default:
+            break
         }
     }
     
     func clickButtonOption() {
-        showAlertWithOptions()
+        showAlertWithOptions(title: "Alerta", text: "Selecione uma Opção")
     }
 }
 

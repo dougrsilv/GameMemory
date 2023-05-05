@@ -50,6 +50,24 @@ class HomeGameView: UIView {
         return button
     }()
     
+    private lazy var titleLevelGame: UILabel = {
+        let label = UILabel()
+        label.text = "Último Nível:"
+        label.font = UIFont.boldSystemFont(ofSize: 20)
+        label.textColor = .white
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    lazy var levelGame: UILabel = {
+        let label = UILabel()
+        label.text = "0"
+        label.font = UIFont.boldSystemFont(ofSize: 20)
+        label.textColor = .white
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
     private lazy var buttonStack: UIStackView = {
         let stack = UIStackView(arrangedSubviews: [numberOfButtons, startButtonGame])
         stack.axis = .vertical
@@ -76,10 +94,18 @@ class HomeGameView: UIView {
     private func setupLayout() {
         addSubview(titleGame)
         addSubview(buttonStack)
+        addSubview(titleLevelGame)
+        addSubview(levelGame)
         
         NSLayoutConstraint.activate([
             titleGame.centerXAnchor.constraint(equalTo: centerXAnchor),
             titleGame.centerYAnchor.constraint(equalTo: centerYAnchor),
+            
+            titleLevelGame.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            titleLevelGame.bottomAnchor.constraint(equalTo: buttonStack.topAnchor, constant: -10),
+            
+            levelGame.leadingAnchor.constraint(equalTo: titleLevelGame.trailingAnchor, constant: 5),
+            levelGame.bottomAnchor.constraint(equalTo: buttonStack.topAnchor, constant: -10),
             
             buttonStack.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             buttonStack.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
@@ -102,5 +128,10 @@ class HomeGameView: UIView {
 
     @objc func keyboardWillHide(sender: NSNotification) {
          self.frame.origin.y = 0
+    }
+    
+    func setupData(setup: HomeGameModel?) {
+        guard let setup = setup else { return }
+        levelGame.text = String(setup.numberAcert)
     }
 }
