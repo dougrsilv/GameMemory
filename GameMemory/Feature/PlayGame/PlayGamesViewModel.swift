@@ -37,20 +37,40 @@ class PlayGamesViewModel {
     }
     
     func startNumber() {
-        if let value = Int(num) {
-            let list = Int.random(in: 0...value - 1)
-            newSelectNumber.append(list)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            if let value = Int(self.num) {
+                let list = Int.random(in: 0...value - 1)
+                self.newSelectNumber.append(list)
+            }
         }
     }
     
-    func equalReults(count: Int) -> Bool? {
-        if newSelectNumber.count == count {
+    func equalReults() -> Bool? {
+        if newSelectNumber.count == optionUser.count {
             return newSelectNumber.elementsEqual(optionUser)
         }
         return nil
     }
     
-    func processData(count: Int) {
-        _ = ProcessData(viewModel: count)
+    func processData() {
+        _ = ProcessData(viewModel: newSelectNumber.count)
+    }
+    
+    func resetAtAllListGameAndStartNumber() {
+        newSelectNumber.removeAll()
+        optionUser.removeAll()
+        startNumber()
+    }
+    
+    func resetListOptionUser() {
+        optionUser.removeAll()
+    }
+    
+    func addListOptionUser(add: Int) {
+        optionUser.append(add)
+    }
+    
+    func countSelectNumber() -> String {
+        return String(newSelectNumber.count)
     }
 }
