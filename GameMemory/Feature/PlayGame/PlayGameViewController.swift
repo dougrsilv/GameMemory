@@ -66,7 +66,6 @@ class PlayGameViewController: UIViewController {
 
 extension PlayGameViewController: PlayGameViewDelegate {
     func clickSelectCorrectButton(number: Int) {
-        
         viewModel.addListOptionUser(add: number)
         viewModel.equalReults()
     }
@@ -78,11 +77,8 @@ extension PlayGameViewController: PlayGameViewDelegate {
 
 extension PlayGameViewController: PlayGamesViewModelOutput {
     func acertGamer() {
-        viewModel.resetListOptionUser()
-        viewModel.startNumber()
         callDelayList()
         playGameView.LevelGame.text = viewModel.countSelectNumber()
-        viewModel.processData()
     }
     
     func errorGamer() {

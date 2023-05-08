@@ -51,10 +51,14 @@ class PlayGamesViewModel {
         if newSelectNumber.count == optionUser.count {
             switch newSelectNumber.elementsEqual(optionUser) {
             case true:
+                startNumber()
+                resetListOptionUser()
+                processData()
                 delegate?.acertGamer()
             case false:
                 delegate?.errorGamer()
             }
+            
         }
     }
     
