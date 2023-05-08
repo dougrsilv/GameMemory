@@ -68,19 +68,7 @@ extension PlayGameViewController: PlayGameViewDelegate {
     func clickSelectCorrectButton(number: Int) {
         
         viewModel.addListOptionUser(add: number)
-                
-        switch viewModel.equalReults() {
-        case true:
-            viewModel.resetListOptionUser()
-            viewModel.startNumber()
-            callDelayList()
-            playGameView.LevelGame.text = viewModel.countSelectNumber()
-            viewModel.processData()
-        case false:
-            showAlertWithOptions(title: "Não Foi dessa vez", text: "Selecione uma Opção")
-        default:
-            break
-        }
+        viewModel.equalReults()
     }
     
     func clickButtonOption() {
@@ -89,6 +77,18 @@ extension PlayGameViewController: PlayGameViewDelegate {
 }
 
 extension PlayGameViewController: PlayGamesViewModelOutput {
+    func acertGamer() {
+        viewModel.resetListOptionUser()
+        viewModel.startNumber()
+        callDelayList()
+        playGameView.LevelGame.text = viewModel.countSelectNumber()
+        viewModel.processData()
+    }
+    
+    func errorGamer() {
+        showAlertWithOptions(title: "Não Foi dessa vez", text: "Selecione uma Opção")
+    }
+    
     func onPlayGame(list: [PlayGameModel]) {
         playGameView.buttonsGameView.setupData(game: list)
     }

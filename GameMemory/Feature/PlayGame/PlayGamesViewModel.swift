@@ -9,6 +9,8 @@ import UIKit
 
 protocol PlayGamesViewModelOutput: AnyObject {
     func onPlayGame(list: [PlayGameModel])
+    func acertGamer()
+    func errorGamer()
 }
 
 class PlayGamesViewModel {
@@ -45,11 +47,15 @@ class PlayGamesViewModel {
         }
     }
     
-    func equalReults() -> Bool? {
+    func equalReults() {
         if newSelectNumber.count == optionUser.count {
-            return newSelectNumber.elementsEqual(optionUser)
+            switch newSelectNumber.elementsEqual(optionUser) {
+            case true:
+                delegate?.acertGamer()
+            case false:
+                delegate?.errorGamer()
+            }
         }
-        return nil
     }
     
     func processData() {
