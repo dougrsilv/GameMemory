@@ -42,6 +42,7 @@ class PlayGameViewController: UIViewController {
     private func showAlertWithOptions(title: String, text: String) {
         let alert = UIAlertController(title: title, message: text, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Reiniciar", style: .default, handler: { alert in
+            self.playGameView.buttonsGameView.resetMatch = true
             self.viewModel.resetAtAllListGameAndStartNumber()
             self.playGameView.LevelGame.text = self.viewModel.countSelectNumber()
             self.callDelayList()
@@ -57,6 +58,7 @@ class PlayGameViewController: UIViewController {
     
     private func callDelayList() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.playGameView.buttonsGameView.resetMatch = false
             self.playGameView.buttonsGameView.viewBlink(list: self.viewModel.newSelectNumber)
         }
     }

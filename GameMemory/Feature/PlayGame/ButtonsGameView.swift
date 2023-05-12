@@ -17,6 +17,7 @@ class ButtonsGameView: UIView {
     
     private let cell = "cell"
     private var playGame: [PlayGameModel] = []
+    var resetMatch: Bool = false
     weak var delegate: ButtonsGameViewDelegate?
     
     lazy var collectionViewGames: UICollectionView = {
@@ -61,25 +62,20 @@ class ButtonsGameView: UIView {
         collectionViewGames.reloadData()
     }
     
-    func delay(_ delay: Double, closure: @escaping ()->()) {
-        DispatchQueue.main.asyncAfter(
-            deadline: DispatchTime.now() + Double(Int64(delay * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC), execute: closure)
-    }
-    
     func viewBlink(list: [Int]) {
-        
-        var i = 0
-        
-        while i < list.count {
-            let lis = list[i]
-            delay(Double(3 * i)) {
-                let cell = self.collectionViewGames.cellForItem(at: .init(row: lis, section: 0)) as! ButtonsGameCell
-                cell.flashMemory.backgroundColor = .yellow
-                DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
-                    cell.flashMemory.backgroundColor = .red
-                }
+        if list.isEmpty ||  resetMatch == true {
+            resetMatch = false
+            return
+        }
+        var newList = list
+        let item  = newList.removeFirst()
+        let cell = self.collectionViewGames.cellForItem(at: .init(row: item, section: 0)) as! ButtonsGameCell
+        cell.flashMemory.backgroundColor = .yellow
+        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(500)) {
+            cell.flashMemory.backgroundColor = .red
+            DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(500)) {
+                self.viewBlink(list: newList)
             }
-            i += 1
         }
     }
 }
@@ -98,6 +94,12 @@ extension ButtonsGameView: UICollectionViewDelegate, UICollectionViewDataSource,
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath) as! ButtonsGameCell
+        cell.flashMemory.backgroundColor = .white
+        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(500)) {
+            cell.flashMemory.backgroundColor = .red
+        }
+       
         delegate?.selectButtonNumber(number: indexPath.row)
     }
     

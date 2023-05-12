@@ -58,7 +58,6 @@ class PlayGamesViewModel {
             case false:
                 delegate?.errorGamer()
             }
-            
         }
     }
     

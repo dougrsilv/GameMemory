@@ -43,10 +43,4 @@ class ButtonsGameCell: UICollectionViewCell {
             flashMemory.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }
-    
-    func setupData(setup: PlayGameModel?) {
-//        if setup?.select == true {
-//            flashMemory.blink(duration: 1, delay: 0.0, stopAfter: 1.0, alpha: 0.5)
-//        }
-    }
 }
