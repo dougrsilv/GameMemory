@@ -54,8 +54,8 @@ extension HomeGameViewController: HomeGameViewDelegate {
     func clickButtonStartGame(value: String) {
         if value == "0" {
             showAlert(title: "Aviso",
-                                 text: "Número Inválido",
-                                 buttonText: "Ok")
+                      text: "Número Inválido",
+                      buttonText: "Ok")
         } else {
             let viewModel = PlayGamesViewModel(count: value)
             let playGameViewController = PlayGameViewController(viewModel: viewModel)

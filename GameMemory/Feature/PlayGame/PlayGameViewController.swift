@@ -34,19 +34,49 @@ class PlayGameViewController: UIViewController {
         viewModel.delegate = self
         viewModel.fetchPlayGame()
         viewModel.startNumber()
+        viewModel.timerCount()
+        viewModel.recordMatchLevel()
         callDelayList()
+        notificationdidEnterBackgroundNotification()
+        notificationAppBackground()
     }
     
     // MARK: - Functions
+    
+    func notificationdidEnterBackgroundNotification() {
+        NotificationCenter.default.addObserver(self, selector: #selector(didEnterBackgroundNotification), name: UIApplication.didEnterBackgroundNotification, object: nil)
+    }
+    
+    func notificationAppBackground() {
+        NotificationCenter.default.addObserver(self, selector: #selector(applicationDidBecomeActive), name: UIApplication.didBecomeActiveNotification, object: nil)
+    }
     
     private func showAlertWithOptions(title: String, text: String) {
         let alert = UIAlertController(title: title, message: text, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Reiniciar", style: .default, handler: { alert in
             self.playGameView.buttonsGameView.resetMatch = true
             self.viewModel.resetAtAllListGameAndStartNumber()
-            self.playGameView.LevelGame.text = self.viewModel.countSelectNumber()
+            self.playGameView.informationPlayGameView.LevelGame.text = self.viewModel.countSelectNumber()
             self.callDelayList()
+            self.viewModel.disableRepeatButton = true
+            self.viewModel.count = 0
         }))
+        
+        if viewModel.disableContinueButton == true {
+            alert.addAction(UIAlertAction(title: "continuar", style: .default, handler: { alert in
+                self.callDelayList()
+                self.viewModel.timerCount()
+            }))
+        }
+        
+        if viewModel.disableRepeatButton == true {
+            alert.addAction(UIAlertAction(title: "repetir", style: .default, handler: { alert in
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    self.callDelayList()
+                    self.viewModel.disableRepeatButton = false
+                }
+            }))
+        }
         
         alert.addAction(UIAlertAction(title: "Sair", style: .default, handler: { alert in
             self.dismiss(animated: true)
@@ -62,6 +92,17 @@ class PlayGameViewController: UIViewController {
             self.playGameView.buttonsGameView.viewBlink(list: self.viewModel.newSelectNumber)
         }
     }
+    
+    @objc func applicationDidBecomeActive(notification: NSNotification) {
+        showAlertWithOptions(title: "Jogo Pausado", text:  "Selecione uma Opção")
+        viewModel.disableContinueButton = false
+    }
+    
+    @objc func didEnterBackgroundNotification() {
+        playGameView.buttonsGameView.resetMatch = true
+        viewModel.disableContinueButton = true
+        viewModel.timer.invalidate()
+    }
 }
 
 // MARK: - PlayGameViewDelegate
@@ -73,17 +114,26 @@ extension PlayGameViewController: PlayGameViewDelegate {
     }
     
     func clickButtonOption() {
-        showAlertWithOptions(title: "Alerta", text: "Selecione uma Opção")
+        showAlertWithOptions(title: "Aviso", text: "Selecione uma Opção")
     }
 }
 
 extension PlayGameViewController: PlayGamesViewModelOutput {
+    func recorLevel(record: String) {
+        playGameView.informationPlayGameView.recordGame.text = record
+    }
+    
+    func timeValue(time: String) {
+        playGameView.informationPlayGameView.timeGame.text = time
+    }
+    
     func acertGamer() {
         callDelayList()
-        playGameView.LevelGame.text = viewModel.countSelectNumber()
+        playGameView.informationPlayGameView.LevelGame.text = viewModel.countSelectNumber()
     }
     
     func errorGamer() {
+        viewModel.disableRepeatButton = false
         showAlertWithOptions(title: "Não Foi dessa vez", text: "Selecione uma Opção")
     }
     

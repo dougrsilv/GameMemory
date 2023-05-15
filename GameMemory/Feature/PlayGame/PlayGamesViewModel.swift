@@ -11,14 +11,21 @@ protocol PlayGamesViewModelOutput: AnyObject {
     func onPlayGame(list: [PlayGameModel])
     func acertGamer()
     func errorGamer()
+    func timeValue(time: String)
+    func recorLevel(record: String)
 }
 
 class PlayGamesViewModel {
     
     private var playGameModel: [PlayGameModel] = []
     private var num: String = ""
+    var timer: Timer = Timer()
+    var count: Int = 0
     var newSelectNumber: [Int] = []
     var optionUser: [Int] = []
+    var disableRepeatButton = true
+    var disableContinueButton =  false
+   
     weak var delegate: PlayGamesViewModelOutput?
     
     init(count: String) {
@@ -62,7 +69,16 @@ class PlayGamesViewModel {
     }
     
     func processData() {
-        _ = ProcessData(viewModel: newSelectNumber.count)
+        let count = UserDefaults.standard.integer(forKey: "contador")
+        if count < newSelectNumber.count {
+            _ = ProcessData(viewModel: newSelectNumber.count)
+        }
+    }
+    
+    func recordMatchLevel() {
+        let count = UserDefaults.standard.integer(forKey: "contador")
+        let convertResultString = String(count)
+        delegate?.recorLevel(record: convertResultString)
     }
     
     func resetAtAllListGameAndStartNumber() {
@@ -81,5 +97,30 @@ class PlayGamesViewModel {
     
     func countSelectNumber() -> String {
         return String(newSelectNumber.count)
+    }
+    
+    func timerCount() {
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerCounter), userInfo: nil, repeats: true)
+    }
+    
+    func secondsToHoursMinutesSeconds(seconds: Int) -> (Int, Int, Int) {
+        return ((seconds / 3600), ((seconds % 3600) / 60),((seconds % 3600) % 60))
+    }
+    
+    func makeTimeString(hours: Int, minutes: Int, seconds : Int) -> String {
+        var timeString = ""
+        timeString += String(format: "%02d", hours)
+        timeString += ":"
+        timeString += String(format: "%02d", minutes)
+        timeString += ":"
+        timeString += String(format: "%02d", seconds)
+        return timeString
+    }
+    
+    @objc func timerCounter() {
+        count = count + 1
+        let time = secondsToHoursMinutesSeconds(seconds: count)
+        let timeString = makeTimeString(hours: time.0, minutes: time.1, seconds: time.2)
+        delegate?.timeValue(time: timeString)
     }
 }
