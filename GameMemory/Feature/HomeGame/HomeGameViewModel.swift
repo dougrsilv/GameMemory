@@ -16,8 +16,18 @@ class HomeGameViewModel {
     weak var delegate: HomeGameViewModelOutput?
     
     func updateResult() {
-        let count = UserDefaults.standard.integer(forKey: "contador")
-        let model = HomeGameModel(numberAcert: count)
+        let elements = UserDefaults.standard.string(forKey: "elements") ?? "0"
+        let level = UserDefaults.standard.integer(forKey: "level")
+        let time =  UserDefaults.standard.string(forKey: "time") ?? "00:00:00"
+        
+        let model = HomeGameModel(numberElemts: elements,
+                                  numberAcert: level,
+                                  time: time)
         delegate?.onNumberAcert(number: model)
+    }
+    
+    func saveResultButtons() -> String {
+        let value = UserDefaults.standard.string(forKey:  "button") ?? ""
+        return value
     }
 }

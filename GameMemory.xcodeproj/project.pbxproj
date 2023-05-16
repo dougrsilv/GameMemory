@@ -7,10 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA0B85FF2A13DFB200A9F0EF /* SettingGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0B85FE2A13DFB200A9F0EF /* SettingGameView.swift */; };
+		DA0B86012A13F75D00A9F0EF /* SettingGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0B86002A13F75D00A9F0EF /* SettingGameViewModel.swift */; };
+		DA0B86032A1435B500A9F0EF /* HomeGameLevelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0B86022A1435B500A9F0EF /* HomeGameLevelView.swift */; };
 		DA66A4882A05428C0072FDEC /* ProcessData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA66A4872A05428C0072FDEC /* ProcessData.swift */; };
 		DAB228CB2A057AC9005EB72A /* HomeGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB228CA2A057AC9005EB72A /* HomeGameViewModel.swift */; };
 		DAB228CD2A057C20005EB72A /* HomeGameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB228CC2A057C20005EB72A /* HomeGameModel.swift */; };
 		DAB9AC2B2A12B5DF00530914 /* InformationPlayGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB9AC2A2A12B5DF00530914 /* InformationPlayGameView.swift */; };
+		DAB9AC302A12F48900530914 /* SettingGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB9AC2F2A12F48900530914 /* SettingGameViewController.swift */; };
 		DAC4581729F85A95000E0E4F /* PlayGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC4581629F85A95000E0E4F /* PlayGameViewController.swift */; };
 		DAC4581929F85CA7000E0E4F /* PlayGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC4581829F85CA7000E0E4F /* PlayGameView.swift */; };
 		DAC4581B29F89409000E0E4F /* ButtonsGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC4581A29F89409000E0E4F /* ButtonsGameView.swift */; };
@@ -48,10 +52,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DA0B85FE2A13DFB200A9F0EF /* SettingGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingGameView.swift; sourceTree = "<group>"; };
+		DA0B86002A13F75D00A9F0EF /* SettingGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingGameViewModel.swift; sourceTree = "<group>"; };
+		DA0B86022A1435B500A9F0EF /* HomeGameLevelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeGameLevelView.swift; sourceTree = "<group>"; };
 		DA66A4872A05428C0072FDEC /* ProcessData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessData.swift; sourceTree = "<group>"; };
 		DAB228CA2A057AC9005EB72A /* HomeGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeGameViewModel.swift; sourceTree = "<group>"; };
 		DAB228CC2A057C20005EB72A /* HomeGameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeGameModel.swift; sourceTree = "<group>"; };
 		DAB9AC2A2A12B5DF00530914 /* InformationPlayGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationPlayGameView.swift; sourceTree = "<group>"; };
+		DAB9AC2F2A12F48900530914 /* SettingGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingGameViewController.swift; sourceTree = "<group>"; };
 		DAC4581629F85A95000E0E4F /* PlayGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayGameViewController.swift; sourceTree = "<group>"; };
 		DAC4581829F85CA7000E0E4F /* PlayGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayGameView.swift; sourceTree = "<group>"; };
 		DAC4581A29F89409000E0E4F /* ButtonsGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsGameView.swift; sourceTree = "<group>"; };
@@ -100,6 +108,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DAB9AC2C2A12F43C00530914 /* SettingsGame */ = {
+			isa = PBXGroup;
+			children = (
+				DAB9AC2F2A12F48900530914 /* SettingGameViewController.swift */,
+				DA0B85FE2A13DFB200A9F0EF /* SettingGameView.swift */,
+				DA0B86002A13F75D00A9F0EF /* SettingGameViewModel.swift */,
+			);
+			path = SettingsGame;
+			sourceTree = "<group>";
+		};
 		DACB43B329F832B5007012FD = {
 			isa = PBXGroup;
 			children = (
@@ -155,6 +173,7 @@
 		DACB43EF29F83397007012FD /* Feature */ = {
 			isa = PBXGroup;
 			children = (
+				DAB9AC2C2A12F43C00530914 /* SettingsGame */,
 				DAE8B3312A047B9E00406119 /* ProcessData */,
 				DACD2CC929F99C0E00C7B83C /* Model */,
 				DACB43F529F83B49007012FD /* PlayGame */,
@@ -169,6 +188,7 @@
 				DACB43F129F833C2007012FD /* HomeGameViewController.swift */,
 				DACB43F329F83473007012FD /* HomeGameView.swift */,
 				DAB228CA2A057AC9005EB72A /* HomeGameViewModel.swift */,
+				DA0B86022A1435B500A9F0EF /* HomeGameLevelView.swift */,
 			);
 			path = HomeGame;
 			sourceTree = "<group>";
@@ -335,16 +355,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				DACB43C429F832B5007012FD /* ViewController.swift in Sources */,
+				DAB9AC302A12F48900530914 /* SettingGameViewController.swift in Sources */,
 				DACB43F429F83473007012FD /* HomeGameView.swift in Sources */,
+				DA0B86032A1435B500A9F0EF /* HomeGameLevelView.swift in Sources */,
 				DAC4581729F85A95000E0E4F /* PlayGameViewController.swift in Sources */,
 				DAB228CB2A057AC9005EB72A /* HomeGameViewModel.swift in Sources */,
 				DACB43F229F833C2007012FD /* HomeGameViewController.swift in Sources */,
 				DAC4581B29F89409000E0E4F /* ButtonsGameView.swift in Sources */,
 				DACB43C029F832B5007012FD /* AppDelegate.swift in Sources */,
 				DACD2CC829F99BA300C7B83C /* PlayGamesViewModel.swift in Sources */,
+				DA0B85FF2A13DFB200A9F0EF /* SettingGameView.swift in Sources */,
 				DAC4581929F85CA7000E0E4F /* PlayGameView.swift in Sources */,
 				DACB43C229F832B5007012FD /* SceneDelegate.swift in Sources */,
 				DAB228CD2A057C20005EB72A /* HomeGameModel.swift in Sources */,
+				DA0B86012A13F75D00A9F0EF /* SettingGameViewModel.swift in Sources */,
 				DAB9AC2B2A12B5DF00530914 /* InformationPlayGameView.swift in Sources */,
 				DACD2AA929F94BB0001E51DF /* ButtonsGameCell.swift in Sources */,
 				DACD2CCB29F99C2B00C7B83C /* PlayGameModel.swift in Sources */,

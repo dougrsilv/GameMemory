@@ -19,6 +19,7 @@ class PlayGamesViewModel {
     
     private var playGameModel: [PlayGameModel] = []
     private var num: String = ""
+    private var timeRec: String = ""
     var timer: Timer = Timer()
     var count: Int = 0
     var newSelectNumber: [Int] = []
@@ -69,14 +70,16 @@ class PlayGamesViewModel {
     }
     
     func processData() {
-        let count = UserDefaults.standard.integer(forKey: "contador")
+        let count = UserDefaults.standard.integer(forKey: "level")
         if count < newSelectNumber.count {
-            _ = ProcessData(viewModel: newSelectNumber.count)
+            _ = ProcessData(elements: num,
+                            level: newSelectNumber.count,
+                            time: timeRec)
         }
     }
     
     func recordMatchLevel() {
-        let count = UserDefaults.standard.integer(forKey: "contador")
+        let count = UserDefaults.standard.integer(forKey: "level")
         let convertResultString = String(count)
         delegate?.recorLevel(record: convertResultString)
     }
@@ -121,6 +124,7 @@ class PlayGamesViewModel {
         count = count + 1
         let time = secondsToHoursMinutesSeconds(seconds: count)
         let timeString = makeTimeString(hours: time.0, minutes: time.1, seconds: time.2)
+        timeRec = timeString
         delegate?.timeValue(time: timeString)
     }
 }

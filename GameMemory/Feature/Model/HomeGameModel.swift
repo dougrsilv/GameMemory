@@ -8,5 +8,7 @@
 import Foundation
 
 struct HomeGameModel: Decodable {
+    let numberElemts: String
     let numberAcert: Int
+    let time: String
 }

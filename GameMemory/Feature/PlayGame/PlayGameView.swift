@@ -97,6 +97,8 @@ class PlayGameView: UIView {
     }
 }
 
+// MARK: - ButtonsGameViewDelegate
+
 extension PlayGameView: ButtonsGameViewDelegate {
     func selectButtonNumber(number: Int) {
         delegate?.clickSelectCorrectButton(number: number)

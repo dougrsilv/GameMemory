@@ -118,6 +118,8 @@ extension PlayGameViewController: PlayGameViewDelegate {
     }
 }
 
+// MARK: - PlayGamesViewModelOutput
+
 extension PlayGameViewController: PlayGamesViewModelOutput {
     func recorLevel(record: String) {
         playGameView.informationPlayGameView.recordGame.text = record
