@@ -32,6 +32,7 @@ class HomeGameViewController: UIViewController {
     override func viewDidLoad() {
         homeGameView.delegate = self
         viewModel.delegate = self
+        viewModel.updateResult()
     }
     
     override func viewDidAppear(_ animated: Bool) {
