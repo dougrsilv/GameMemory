@@ -14,11 +14,16 @@ protocol HomeGameViewModelOutput: AnyObject {
 class HomeGameViewModel {
   
     weak var delegate: HomeGameViewModelOutput?
+    private var userDefaults : UserDefaults
+    
+    init(userDefaults: UserDefaults = .standard) {
+        self.userDefaults = userDefaults
+    }
     
     func updateResult() {
-        let elements = UserDefaults.standard.string(forKey: "elements") ?? "0"
-        let level = UserDefaults.standard.integer(forKey: "level")
-        let time =  UserDefaults.standard.string(forKey: "time") ?? "00:00:00"
+        let elements = userDefaults.string(forKey: "elements") ?? "0"
+        let level = userDefaults.integer(forKey: "level")
+        let time = userDefaults.string(forKey: "time") ?? "00:00:00"
         
         let model = HomeGameModel(numberElemts: elements,
                                   numberAcert: level,

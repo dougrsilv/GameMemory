@@ -9,13 +9,19 @@ import Foundation
 
 class SettingGameViewModel {
     
+    private var userDefaults : UserDefaults
+    
+    init(userDefaults: UserDefaults = .standard) {
+        self.userDefaults = userDefaults
+    }
+    
     func saveButtonAmount(value: String) {
-        UserDefaults.standard.set(value, forKey: "button")
+        userDefaults.set(value, forKey: "button")
     }
     
     func resetResultMatch() {
-        UserDefaults.standard.removeObject(forKey: "elements")
-        UserDefaults.standard.removeObject(forKey: "level")
-        UserDefaults.standard.removeObject(forKey: "time")
+        userDefaults.removeObject(forKey: "elements")
+        userDefaults.removeObject(forKey: "level")
+        userDefaults.removeObject(forKey: "time")
     }
 }
