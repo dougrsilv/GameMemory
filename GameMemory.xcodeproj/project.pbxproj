@@ -32,6 +32,12 @@
 		DACD2AA929F94BB0001E51DF /* ButtonsGameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACD2AA829F94BB0001E51DF /* ButtonsGameCell.swift */; };
 		DACD2CC829F99BA300C7B83C /* PlayGamesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACD2CC729F99BA300C7B83C /* PlayGamesViewModel.swift */; };
 		DACD2CCB29F99C2B00C7B83C /* PlayGameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACD2CCA29F99C2B00C7B83C /* PlayGameModel.swift */; };
+		DAE013262A30CF2200A8C7EB /* HomeGameViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE013252A30CF2200A8C7EB /* HomeGameViewModelTests.swift */; };
+		DAE507042A337CC100B24A51 /* HomeGameViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE507032A337CC100B24A51 /* HomeGameViewControllerTests.swift */; };
+		DAE507072A337E0500B24A51 /* SpyNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE507062A337E0500B24A51 /* SpyNavigationController.swift */; };
+		DAE507092A33D90100B24A51 /* HomeGameViewModelInputSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE507082A33D90100B24A51 /* HomeGameViewModelInputSpy.swift */; };
+		DAE5070C2A33DFAF00B24A51 /* SettingGameViewControllerDelegateSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE5070B2A33DFAF00B24A51 /* SettingGameViewControllerDelegateSpy.swift */; };
+		DAF66AF42A3104BF00B5D78A /* HomeGameViewModelOutputSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF66AF32A3104BF00B5D78A /* HomeGameViewModelOutputSpy.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +87,12 @@
 		DACD2AA829F94BB0001E51DF /* ButtonsGameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsGameCell.swift; sourceTree = "<group>"; };
 		DACD2CC729F99BA300C7B83C /* PlayGamesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayGamesViewModel.swift; sourceTree = "<group>"; };
 		DACD2CCA29F99C2B00C7B83C /* PlayGameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayGameModel.swift; sourceTree = "<group>"; };
+		DAE013252A30CF2200A8C7EB /* HomeGameViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeGameViewModelTests.swift; sourceTree = "<group>"; };
+		DAE507032A337CC100B24A51 /* HomeGameViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeGameViewControllerTests.swift; sourceTree = "<group>"; };
+		DAE507062A337E0500B24A51 /* SpyNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpyNavigationController.swift; sourceTree = "<group>"; };
+		DAE507082A33D90100B24A51 /* HomeGameViewModelInputSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeGameViewModelInputSpy.swift; sourceTree = "<group>"; };
+		DAE5070B2A33DFAF00B24A51 /* SettingGameViewControllerDelegateSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingGameViewControllerDelegateSpy.swift; sourceTree = "<group>"; };
+		DAF66AF32A3104BF00B5D78A /* HomeGameViewModelOutputSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeGameViewModelOutputSpy.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +168,7 @@
 		DACB43D529F832B7007012FD /* GameMemoryTests */ = {
 			isa = PBXGroup;
 			children = (
+				DAE013232A30CEDB00A8C7EB /* Feature */,
 				DACB43D629F832B7007012FD /* GameMemoryTests.swift */,
 			);
 			path = GameMemoryTests;
@@ -215,12 +228,65 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		DAE013232A30CEDB00A8C7EB /* Feature */ = {
+			isa = PBXGroup;
+			children = (
+				DAE507052A337DDE00B24A51 /* Doubles */,
+				DAE013242A30CEE800A8C7EB /* HomeGameTests */,
+				DAE5070A2A33DF6300B24A51 /* SettingsGameTests */,
+			);
+			path = Feature;
+			sourceTree = "<group>";
+		};
+		DAE013242A30CEE800A8C7EB /* HomeGameTests */ = {
+			isa = PBXGroup;
+			children = (
+				DAF66AF02A31047000B5D78A /* Doubles */,
+				DAE013252A30CF2200A8C7EB /* HomeGameViewModelTests.swift */,
+				DAE507032A337CC100B24A51 /* HomeGameViewControllerTests.swift */,
+			);
+			path = HomeGameTests;
+			sourceTree = "<group>";
+		};
+		DAE507052A337DDE00B24A51 /* Doubles */ = {
+			isa = PBXGroup;
+			children = (
+				DAE507062A337E0500B24A51 /* SpyNavigationController.swift */,
+			);
+			path = Doubles;
+			sourceTree = "<group>";
+		};
+		DAE5070A2A33DF6300B24A51 /* SettingsGameTests */ = {
+			isa = PBXGroup;
+			children = (
+				DAE5070D2A33E6E600B24A51 /* Doubles */,
+			);
+			path = SettingsGameTests;
+			sourceTree = "<group>";
+		};
+		DAE5070D2A33E6E600B24A51 /* Doubles */ = {
+			isa = PBXGroup;
+			children = (
+				DAE5070B2A33DFAF00B24A51 /* SettingGameViewControllerDelegateSpy.swift */,
+			);
+			path = Doubles;
+			sourceTree = "<group>";
+		};
 		DAE8B3312A047B9E00406119 /* ProcessData */ = {
 			isa = PBXGroup;
 			children = (
 				DA66A4872A05428C0072FDEC /* ProcessData.swift */,
 			);
 			path = ProcessData;
+			sourceTree = "<group>";
+		};
+		DAF66AF02A31047000B5D78A /* Doubles */ = {
+			isa = PBXGroup;
+			children = (
+				DAF66AF32A3104BF00B5D78A /* HomeGameViewModelOutputSpy.swift */,
+				DAE507082A33D90100B24A51 /* HomeGameViewModelInputSpy.swift */,
+			);
+			path = Doubles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -381,6 +447,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				DACB43D729F832B7007012FD /* GameMemoryTests.swift in Sources */,
+				DAF66AF42A3104BF00B5D78A /* HomeGameViewModelOutputSpy.swift in Sources */,
+				DAE013262A30CF2200A8C7EB /* HomeGameViewModelTests.swift in Sources */,
+				DAE507072A337E0500B24A51 /* SpyNavigationController.swift in Sources */,
+				DAE507042A337CC100B24A51 /* HomeGameViewControllerTests.swift in Sources */,
+				DAE5070C2A33DFAF00B24A51 /* SettingGameViewControllerDelegateSpy.swift in Sources */,
+				DAE507092A33D90100B24A51 /* HomeGameViewModelInputSpy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

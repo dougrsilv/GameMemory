@@ -12,13 +12,13 @@ class HomeGameViewController: UIViewController {
     // MARK: - Properties
     
     private let homeGameView = HomeGameView()
-    private let viewModel: HomeGameViewModel
+    private var viewModel: HomeGameViewModelInput
     
     override func loadView() {
         view = homeGameView
     }
     
-    init(viewModel: HomeGameViewModel) {
+    init(viewModel: HomeGameViewModelInput) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }

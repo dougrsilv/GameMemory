@@ -7,11 +7,17 @@
 
 import Foundation
 
+protocol HomeGameViewModelInput {
+    var delegate:  HomeGameViewModelOutput? { get set }
+    func updateResult()
+    func saveResultButtons() -> String
+}
+
 protocol HomeGameViewModelOutput: AnyObject {
     func onNumberAcert(number: HomeGameModel?)
 }
 
-class HomeGameViewModel {
+class HomeGameViewModel: HomeGameViewModelInput {
   
     weak var delegate: HomeGameViewModelOutput?
     private var userDefaults : UserDefaults
@@ -32,7 +38,7 @@ class HomeGameViewModel {
     }
     
     func saveResultButtons() -> String {
-        let value = UserDefaults.standard.string(forKey:  "button") ?? ""
+        let value = userDefaults.string(forKey:  "button") ?? ""
         return value
     }
 }
