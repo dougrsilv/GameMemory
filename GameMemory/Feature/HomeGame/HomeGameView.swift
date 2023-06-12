@@ -7,16 +7,22 @@
 
 import UIKit
 
-protocol HomeGameViewDelegate: AnyObject {
+protocol HomeGameViewInput {
+    var delegate: HomeGameViewOutput? { get set }
+    
+    func setupData(setup: HomeGameModel?)
+}
+
+protocol HomeGameViewOutput: AnyObject {
     func clickButtonStartGame()
     func clickButtonConfiguration()
 }
 
-class HomeGameView: UIView {
+class HomeGameView: UIView, HomeGameViewInput {
     
     // MARK: - Properties
     
-    weak var delegate: HomeGameViewDelegate?
+    weak var delegate: HomeGameViewOutput?
     
     private lazy var titleGame: UILabel = {
         let label = UILabel()

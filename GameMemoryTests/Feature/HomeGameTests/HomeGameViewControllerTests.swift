@@ -14,6 +14,7 @@ final class HomeGameViewControllerTests: XCTestCase {
         let viewModelHomeGameViewModel = HomeGameViewModelInputSpy()
         lazy var homeGameViewController = HomeGameViewController(viewModel: viewModelHomeGameViewModel)
         homeGameViewController.viewDidLoad()
+        
         XCTAssertTrue(viewModelHomeGameViewModel.checkPassedUpdateResults)
     }
     
@@ -21,6 +22,7 @@ final class HomeGameViewControllerTests: XCTestCase {
         let viewModelHomeGameViewModel = HomeGameViewModelInputSpy()
         lazy var homeGameViewController = HomeGameViewController(viewModel: viewModelHomeGameViewModel)
         homeGameViewController.viewDidAppear(true)
+        
         XCTAssertTrue(viewModelHomeGameViewModel.checkPassedUpdateResults)
     }
     
@@ -31,6 +33,7 @@ final class HomeGameViewControllerTests: XCTestCase {
         
         XCTAssertTrue(viewModelHomeGameViewModel.checkPassedUpdateResults)
     }
+    
     
     
 //    func test_naviagationController_clickButtonConfiguration() {

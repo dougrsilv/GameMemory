@@ -43,7 +43,7 @@ class HomeGameViewController: UIViewController {
 
 // MARK: - HomeGameViewDelegate
 
-extension HomeGameViewController: HomeGameViewDelegate {
+extension HomeGameViewController: HomeGameViewOutput {
     
     func clickButtonConfiguration() {
         let settingGameViewController = SettingGameViewController()
