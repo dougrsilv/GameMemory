@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol SettingGameViewProtocol: AnyObject {
+protocol SettingGameViewDelegate: AnyObject {
     func clickSaveButtonScreen(button: String)
     func clickResetButton()
 }
@@ -16,7 +16,7 @@ class SettingGameView: UIView {
     
     // MARK: - Properties
     
-    weak var delegate: SettingGameViewProtocol?
+    weak var delegate: SettingGameViewDelegate?
     
     private lazy var titleSettingGame: UILabel = {
         let label = UILabel()

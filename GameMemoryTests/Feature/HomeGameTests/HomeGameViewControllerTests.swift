@@ -33,25 +33,4 @@ final class HomeGameViewControllerTests: XCTestCase {
         
         XCTAssertTrue(viewModelHomeGameViewModel.checkPassedUpdateResults)
     }
-    
-    
-    
-//    func test_naviagationController_clickButtonConfiguration() {
-//        let viewModel = HomeGameViewModel(userDefaults: .standard)
-//        let homeGameViewController = HomeGameViewController(viewModel: viewModel)
-//        let spy = SpyNavigationController(rootViewController: homeGameViewController)
-//        homeGameViewController.clickButtonConfiguration()
-//
-//        XCTAssertTrue(spy.pushViewController is SettingGameViewController)
-//    }
-//
-//    func test_naviagationController_clickButtonStartGame() {
-//        let viewModel = HomeGameViewModel(userDefaults: .standard)
-//        let homeGameViewController = HomeGameViewController(viewModel: viewModel)
-//        let spy = SpyNavigationController(rootViewController: homeGameViewController)
-//        homeGameViewController.clickButtonStartGame()
-//
-//        XCTAssertTrue(spy.pushViewController is PlayGameViewController)
-//    }
-
 }

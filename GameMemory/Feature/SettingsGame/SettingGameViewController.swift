@@ -16,11 +16,20 @@ class SettingGameViewController: UIViewController {
     // MARK: - Properties
     
     let settingGameView = SettingGameView()
-    let viewmodel = SettingGameViewModel()
+    let viewModel: SettingGameViewModel
     weak var delegate: SettingGameViewControllerDelegate?
     
     override func loadView() {
         view = settingGameView
+    }
+    
+    init(viewModel: SettingGameViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     // MARK: - Lifecycle
@@ -41,10 +50,10 @@ class SettingGameViewController: UIViewController {
 
 // MARK: - SettingGameViewProtocol
 
-extension SettingGameViewController: SettingGameViewProtocol {
+extension SettingGameViewController: SettingGameViewDelegate {
     
     func clickResetButton() {
-        viewmodel.resetResultMatch()
+        viewModel.resetResultMatch()
         delegate?.resetMatch()
     }
     
@@ -54,7 +63,7 @@ extension SettingGameViewController: SettingGameViewProtocol {
                       text: "Número Inválido",
                       buttonText: "Ok")
         } else {
-            viewmodel.saveButtonAmount(value: button)
+            viewModel.saveButtonAmount(value: button)
             dismiss(animated: true)
         }
     }

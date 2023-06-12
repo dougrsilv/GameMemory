@@ -46,7 +46,8 @@ class HomeGameViewController: UIViewController {
 extension HomeGameViewController: HomeGameViewOutput {
     
     func clickButtonConfiguration() {
-        let settingGameViewController = SettingGameViewController()
+        let viewModel = SettingGameViewModel()
+        let settingGameViewController = SettingGameViewController(viewModel: viewModel)
         settingGameViewController.delegate = self
         let navBarOnModal: UINavigationController = UINavigationController(rootViewController: settingGameViewController)
         if let sheet = navBarOnModal.sheetPresentationController {
