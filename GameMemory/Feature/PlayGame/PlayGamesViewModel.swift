@@ -7,6 +7,34 @@
 
 import UIKit
 
+protocol PlayGamesViewModelInput {
+    var delegate: PlayGamesViewModelOutput? { get set }
+    
+    var playGameModel: [PlayGameModel] { get }
+    var num: String { get }
+    var timeRec: String  { get }
+    var optionUser: [Int] { get }
+    
+    var disableRepeatButton: Bool { get set }
+    var disableContinueButton: Bool { get set }
+    var count: Int { get set }
+    var newSelectNumber: [Int] { get set }
+    var timer: Timer  { get set }
+    
+    func fetchPlayGame()
+    func startNumber()
+    func equalReults()
+    func processData()
+    func recordMatchLevel()
+    func resetAtAllListGameAndStartNumber()
+    func resetListOptionUser()
+    func addListOptionUser(add: Int)
+    func countSelectNumber() -> String
+    func timerCount()
+    func secondsToHoursMinutesSeconds(seconds: Int) -> (Int, Int, Int)
+    func makeTimeString(hours: Int, minutes: Int, seconds : Int) -> String
+}
+
 protocol PlayGamesViewModelOutput: AnyObject {
     func onPlayGame(list: [PlayGameModel])
     func acertGamer()
@@ -15,15 +43,16 @@ protocol PlayGamesViewModelOutput: AnyObject {
     func recorLevel(record: String)
 }
 
-class PlayGamesViewModel {
+class PlayGamesViewModel: PlayGamesViewModelInput {
     
-    private var playGameModel: [PlayGameModel] = []
-    private var num: String = ""
-    private var timeRec: String = ""
+    private(set) var playGameModel: [PlayGameModel] = []
+    private(set) var num: String = ""
+    private(set) var timeRec: String = ""
+    private(set) var optionUser: [Int] = []
+    
     var timer: Timer = Timer()
     var count: Int = 0
     var newSelectNumber: [Int] = []
-    var optionUser: [Int] = []
     var disableRepeatButton = true
     var disableContinueButton =  false
    
@@ -37,22 +66,15 @@ class PlayGamesViewModel {
         num = count
     }
     
-    private func convertValueInttoString(value: String) -> Int {
-        guard let value = Int(value) else { return 0 }
-        return value
-    }
-    
     func fetchPlayGame() {
         delegate?.onPlayGame(list: playGameModel)
     }
     
     func startNumber() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             if let value = Int(self.num) {
                 let list = Int.random(in: 0...value - 1)
                 self.newSelectNumber.append(list)
             }
-        }
     }
     
     func equalReults() {

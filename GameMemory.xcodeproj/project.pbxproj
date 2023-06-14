@@ -10,9 +10,11 @@
 		DA0B85FF2A13DFB200A9F0EF /* SettingGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0B85FE2A13DFB200A9F0EF /* SettingGameView.swift */; };
 		DA0B86012A13F75D00A9F0EF /* SettingGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0B86002A13F75D00A9F0EF /* SettingGameViewModel.swift */; };
 		DA0B86032A1435B500A9F0EF /* HomeGameLevelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0B86022A1435B500A9F0EF /* HomeGameLevelView.swift */; };
+		DA1726DF2A38EAE90030093F /* PlayGameViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1726DE2A38EAE90030093F /* PlayGameViewControllerTests.swift */; };
 		DA66A4882A05428C0072FDEC /* ProcessData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA66A4872A05428C0072FDEC /* ProcessData.swift */; };
 		DAB228CB2A057AC9005EB72A /* HomeGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB228CA2A057AC9005EB72A /* HomeGameViewModel.swift */; };
 		DAB228CD2A057C20005EB72A /* HomeGameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB228CC2A057C20005EB72A /* HomeGameModel.swift */; };
+		DAB775BD2A38AA180081961A /* PlayGamesViewModelInputSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB775BC2A38AA180081961A /* PlayGamesViewModelInputSpy.swift */; };
 		DAB9AC2B2A12B5DF00530914 /* InformationPlayGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB9AC2A2A12B5DF00530914 /* InformationPlayGameView.swift */; };
 		DAB9AC302A12F48900530914 /* SettingGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB9AC2F2A12F48900530914 /* SettingGameViewController.swift */; };
 		DAC4581729F85A95000E0E4F /* PlayGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC4581629F85A95000E0E4F /* PlayGameViewController.swift */; };
@@ -37,6 +39,8 @@
 		DADA96FF2A37A3DE00B660A7 /* SettingGameViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADA96FE2A37A3DE00B660A7 /* SettingGameViewTests.swift */; };
 		DADA97012A37A6EF00B660A7 /* SettingGameViewSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADA97002A37A6EF00B660A7 /* SettingGameViewSpy.swift */; };
 		DADA97032A37ACC500B660A7 /* SettingGameViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADA97022A37ACC500B660A7 /* SettingGameViewModelTests.swift */; };
+		DADA97062A37E02000B660A7 /* PlayGameViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADA97052A37E02000B660A7 /* PlayGameViewModelTests.swift */; };
+		DADA97092A37EFD900B660A7 /* PlayGamesViewModelOutputSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADA97082A37EFD900B660A7 /* PlayGamesViewModelOutputSpy.swift */; };
 		DAE013262A30CF2200A8C7EB /* HomeGameViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE013252A30CF2200A8C7EB /* HomeGameViewModelTests.swift */; };
 		DAE507042A337CC100B24A51 /* HomeGameViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE507032A337CC100B24A51 /* HomeGameViewControllerTests.swift */; };
 		DAE507072A337E0500B24A51 /* SpyNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE507062A337E0500B24A51 /* SpyNavigationController.swift */; };
@@ -69,9 +73,11 @@
 		DA0B85FE2A13DFB200A9F0EF /* SettingGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingGameView.swift; sourceTree = "<group>"; };
 		DA0B86002A13F75D00A9F0EF /* SettingGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingGameViewModel.swift; sourceTree = "<group>"; };
 		DA0B86022A1435B500A9F0EF /* HomeGameLevelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeGameLevelView.swift; sourceTree = "<group>"; };
+		DA1726DE2A38EAE90030093F /* PlayGameViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayGameViewControllerTests.swift; sourceTree = "<group>"; };
 		DA66A4872A05428C0072FDEC /* ProcessData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessData.swift; sourceTree = "<group>"; };
 		DAB228CA2A057AC9005EB72A /* HomeGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeGameViewModel.swift; sourceTree = "<group>"; };
 		DAB228CC2A057C20005EB72A /* HomeGameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeGameModel.swift; sourceTree = "<group>"; };
+		DAB775BC2A38AA180081961A /* PlayGamesViewModelInputSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayGamesViewModelInputSpy.swift; sourceTree = "<group>"; };
 		DAB9AC2A2A12B5DF00530914 /* InformationPlayGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationPlayGameView.swift; sourceTree = "<group>"; };
 		DAB9AC2F2A12F48900530914 /* SettingGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingGameViewController.swift; sourceTree = "<group>"; };
 		DAC4581629F85A95000E0E4F /* PlayGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayGameViewController.swift; sourceTree = "<group>"; };
@@ -100,6 +106,8 @@
 		DADA96FE2A37A3DE00B660A7 /* SettingGameViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingGameViewTests.swift; sourceTree = "<group>"; };
 		DADA97002A37A6EF00B660A7 /* SettingGameViewSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingGameViewSpy.swift; sourceTree = "<group>"; };
 		DADA97022A37ACC500B660A7 /* SettingGameViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingGameViewModelTests.swift; sourceTree = "<group>"; };
+		DADA97052A37E02000B660A7 /* PlayGameViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayGameViewModelTests.swift; sourceTree = "<group>"; };
+		DADA97082A37EFD900B660A7 /* PlayGamesViewModelOutputSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayGamesViewModelOutputSpy.swift; sourceTree = "<group>"; };
 		DAE013252A30CF2200A8C7EB /* HomeGameViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeGameViewModelTests.swift; sourceTree = "<group>"; };
 		DAE507032A337CC100B24A51 /* HomeGameViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeGameViewControllerTests.swift; sourceTree = "<group>"; };
 		DAE507062A337E0500B24A51 /* SpyNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpyNavigationController.swift; sourceTree = "<group>"; };
@@ -244,9 +252,29 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		DADA97042A37DFD800B660A7 /* PlayGame */ = {
+			isa = PBXGroup;
+			children = (
+				DADA97072A37EFB300B660A7 /* Doubles */,
+				DA1726DE2A38EAE90030093F /* PlayGameViewControllerTests.swift */,
+				DADA97052A37E02000B660A7 /* PlayGameViewModelTests.swift */,
+			);
+			path = PlayGame;
+			sourceTree = "<group>";
+		};
+		DADA97072A37EFB300B660A7 /* Doubles */ = {
+			isa = PBXGroup;
+			children = (
+				DADA97082A37EFD900B660A7 /* PlayGamesViewModelOutputSpy.swift */,
+				DAB775BC2A38AA180081961A /* PlayGamesViewModelInputSpy.swift */,
+			);
+			path = Doubles;
+			sourceTree = "<group>";
+		};
 		DAE013232A30CEDB00A8C7EB /* Feature */ = {
 			isa = PBXGroup;
 			children = (
+				DADA97042A37DFD800B660A7 /* PlayGame */,
 				DAE507122A33FA2F00B24A51 /* Fixture */,
 				DAE507052A337DDE00B24A51 /* Doubles */,
 				DAE013242A30CEE800A8C7EB /* HomeGameTests */,
@@ -482,10 +510,14 @@
 				DADA96FB2A378F8500B660A7 /* HomeGameViewInputSpy.swift in Sources */,
 				DADA96FD2A37994B00B660A7 /* SettingGameViewControllerTests.swift in Sources */,
 				DADA96FF2A37A3DE00B660A7 /* SettingGameViewTests.swift in Sources */,
+				DADA97092A37EFD900B660A7 /* PlayGamesViewModelOutputSpy.swift in Sources */,
 				DAE507112A33F05C00B24A51 /* HomeGameViewDelegateSpy.swift in Sources */,
 				DACB43D729F832B7007012FD /* GameMemoryTests.swift in Sources */,
+				DADA97062A37E02000B660A7 /* PlayGameViewModelTests.swift in Sources */,
+				DAB775BD2A38AA180081961A /* PlayGamesViewModelInputSpy.swift in Sources */,
 				DAF66AF42A3104BF00B5D78A /* HomeGameViewModelOutputSpy.swift in Sources */,
 				DAE013262A30CF2200A8C7EB /* HomeGameViewModelTests.swift in Sources */,
+				DA1726DF2A38EAE90030093F /* PlayGameViewControllerTests.swift in Sources */,
 				DAE5070F2A33EFC300B24A51 /* HomeGameViewTests.swift in Sources */,
 				DAE507072A337E0500B24A51 /* SpyNavigationController.swift in Sources */,
 				DAE507142A33FAE600B24A51 /* HomeGameModelFixtures.swift in Sources */,
