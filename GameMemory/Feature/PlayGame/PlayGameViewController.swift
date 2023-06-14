@@ -51,7 +51,7 @@ class PlayGameViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(applicationDidBecomeActive), name: UIApplication.didBecomeActiveNotification, object: nil)
     }
     
-    private func showAlertWithOptions(title: String, text: String) {
+    func showAlertWithOptions(title: String, text: String) {
         let alert = UIAlertController(title: title, message: text, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Reiniciar", style: .default, handler: { alert in
             self.playGameView.buttonsGameView.resetMatch = true
