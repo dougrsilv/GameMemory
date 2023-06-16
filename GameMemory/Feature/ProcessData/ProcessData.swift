@@ -9,14 +9,13 @@ import UIKit
 
 class ProcessData {
     
-    private var viewModel: Int = 0
-    
-    init(viewModel: Int) {
-        self.viewModel = viewModel
-        saveDataResult(count: viewModel)
+    init(elements: String, level: Int, time: String) {
+        saveDataResult(elements: elements, level: level, time: time)
     }
     
-    func saveDataResult(count: Int) {
-        UserDefaults.standard.set(count, forKey: "contador")
+    func saveDataResult(elements: String, level: Int, time: String) {
+        UserDefaults.standard.set(elements, forKey: "elements")
+        UserDefaults.standard.set(level, forKey: "level")
+        UserDefaults.standard.set(time, forKey: "time")
     }
 }

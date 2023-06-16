@@ -12,13 +12,13 @@ class HomeGameViewController: UIViewController {
     // MARK: - Properties
     
     private let homeGameView = HomeGameView()
-    private let viewModel: HomeGameViewModel
+    private var viewModel: HomeGameViewModelInput
     
     override func loadView() {
         view = homeGameView
     }
     
-    init(viewModel: HomeGameViewModel) {
+    init(viewModel: HomeGameViewModelInput) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -32,46 +32,55 @@ class HomeGameViewController: UIViewController {
     override func viewDidLoad() {
         homeGameView.delegate = self
         viewModel.delegate = self
+        viewModel.updateResult()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         viewModel.updateResult()
     }
-    
-    // MARK: - Function
-    
-    private func showAlert(title: String, text: String, buttonText: String) {
-        let alert = UIAlertController(title: title, message: text, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: buttonText, style: .default))
-        self.present(alert, animated: true)
-    }
 }
 
 // MARK: - HomeGameViewDelegate
 
-extension HomeGameViewController: HomeGameViewDelegate {
-    func clickButtonStartGame(value: String) {
-        if value == "0" {
-            showAlert(title: "Aviso",
-                                 text: "Número Inválido",
-                                 buttonText: "Ok")
-        } else {
-            let viewModel = PlayGamesViewModel(count: value)
-            let playGameViewController = PlayGameViewController(viewModel: viewModel)
-            let navBarOnModal: UINavigationController = UINavigationController(rootViewController: playGameViewController)
-            navBarOnModal.modalPresentationStyle = .fullScreen
-            navigationController?.present(navBarOnModal, animated: false)
+extension HomeGameViewController: HomeGameViewOutput {
+    
+    func clickButtonConfiguration() {
+        let viewModel = SettingGameViewModel()
+        let settingGameViewController = SettingGameViewController(viewModel: viewModel)
+        settingGameViewController.delegate = self
+        let navBarOnModal: UINavigationController = UINavigationController(rootViewController: settingGameViewController)
+        if let sheet = navBarOnModal.sheetPresentationController {
+            sheet.detents = [.custom(resolver: { context in
+                0.6 * context.maximumDetentValue
+            }), .large()]
         }
+        navigationController?.present(navBarOnModal, animated: false)
+    }
+    
+    func clickButtonStartGame() {
+        let viewModel = PlayGamesViewModel(count: viewModel.saveResultButtons())
+        let playGameViewController = PlayGameViewController(viewModel: viewModel)
+        let navBarOnModal: UINavigationController = UINavigationController(rootViewController: playGameViewController)
+        navBarOnModal.modalPresentationStyle = .fullScreen
+        navigationController?.present(navBarOnModal, animated: false)
     }
 }
 
 // MARK: - HomeGameViewModelOutput
 
 extension HomeGameViewController: HomeGameViewModelOutput {
-
+    
     func onNumberAcert(number: HomeGameModel?) {
         homeGameView.setupData(setup: number)
+    }
+}
+
+// MARK: - SettingGameViewControllerDelegate
+
+extension HomeGameViewController: SettingGameViewControllerDelegate {
+    func resetMatch() {
+        viewModel.updateResult()
     }
 }
 

@@ -7,17 +7,38 @@
 
 import Foundation
 
+protocol HomeGameViewModelInput {
+    var delegate:  HomeGameViewModelOutput? { get set }
+    func updateResult()
+    func saveResultButtons() -> String
+}
+
 protocol HomeGameViewModelOutput: AnyObject {
     func onNumberAcert(number: HomeGameModel?)
 }
 
-class HomeGameViewModel {
+class HomeGameViewModel: HomeGameViewModelInput {
   
     weak var delegate: HomeGameViewModelOutput?
+    private var userDefaults : UserDefaults
+    
+    init(userDefaults: UserDefaults = .standard) {
+        self.userDefaults = userDefaults
+    }
     
     func updateResult() {
-        let count = UserDefaults.standard.integer(forKey: "contador")
-        let model = HomeGameModel(numberAcert: count)
+        let elements = userDefaults.string(forKey: "elements") ?? "0"
+        let level = userDefaults.integer(forKey: "level")
+        let time = userDefaults.string(forKey: "time") ?? "00:00:00"
+        
+        let model = HomeGameModel(numberElemts: elements,
+                                  numberAcert: level,
+                                  time: time)
         delegate?.onNumberAcert(number: model)
+    }
+    
+    func saveResultButtons() -> String {
+        let value = userDefaults.string(forKey:  "button") ?? ""
+        return value
     }
 }

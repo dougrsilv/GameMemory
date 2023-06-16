@@ -39,22 +39,10 @@ class PlayGameView: UIView {
         return button
     }()
     
-    private lazy var titleLevelGame: UILabel = {
-        let label = UILabel()
-        label.text = "Nível:"
-        label.font = UIFont.boldSystemFont(ofSize: 20)
-        label.textColor = .white
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    lazy var LevelGame: UILabel = {
-        let label = UILabel()
-        label.text = "0"
-        label.font = UIFont.boldSystemFont(ofSize: 20)
-        label.textColor = .white
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
+    lazy var informationPlayGameView: InformationPlayGameView = {
+        let view = InformationPlayGameView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
     }()
     
     lazy var buttonsGameView: ButtonsGameView = {
@@ -81,8 +69,7 @@ class PlayGameView: UIView {
     private func setupLayout() {
         addSubview(optionPlayGame)
         addSubview(titleGame)
-        addSubview(titleLevelGame)
-        addSubview(LevelGame)
+        addSubview(informationPlayGameView)
         addSubview(buttonsGameView)
         
         NSLayoutConstraint.activate([
@@ -93,13 +80,12 @@ class PlayGameView: UIView {
             optionPlayGame.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
             optionPlayGame.heightAnchor.constraint(equalToConstant: 55),
             
-            titleLevelGame.topAnchor.constraint(equalTo: optionPlayGame.bottomAnchor, constant: 10),
-            titleLevelGame.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
+            informationPlayGameView.topAnchor.constraint(equalTo: optionPlayGame.bottomAnchor, constant: 10),
+            informationPlayGameView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            informationPlayGameView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            informationPlayGameView.heightAnchor.constraint(equalToConstant: 70),
             
-            LevelGame.topAnchor.constraint(equalTo: optionPlayGame.bottomAnchor, constant: 10),
-            LevelGame.leadingAnchor.constraint(equalTo: titleLevelGame.trailingAnchor, constant: 5),
-            
-            buttonsGameView.topAnchor.constraint(equalTo: optionPlayGame.bottomAnchor, constant: 50),
+            buttonsGameView.topAnchor.constraint(equalTo: informationPlayGameView.bottomAnchor, constant: 20),
             buttonsGameView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
             buttonsGameView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
             buttonsGameView.bottomAnchor.constraint(equalTo: bottomAnchor)
@@ -110,6 +96,8 @@ class PlayGameView: UIView {
         delegate?.clickButtonOption()
     }
 }
+
+// MARK: - ButtonsGameViewDelegate
 
 extension PlayGameView: ButtonsGameViewDelegate {
     func selectButtonNumber(number: Int) {
