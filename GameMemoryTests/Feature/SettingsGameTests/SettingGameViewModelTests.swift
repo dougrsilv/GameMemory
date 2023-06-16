@@ -12,7 +12,8 @@ import UIKit
 final class SettingGameViewModelTests: XCTestCase {
 
     func test_saveButtonAmout() {
-        let sut = SettingGameViewModel(userDefaults: .standard)
+        let standardTests = UserDefaults()
+        let sut = SettingGameViewModel(userDefaults: standardTests)
         sut.saveButtonAmount(value: "5")
         
         let value = UserDefaults.standard.string(forKey:  "button") ?? ""
@@ -21,7 +22,8 @@ final class SettingGameViewModelTests: XCTestCase {
     }
     
     func test_resetResultMatch() {
-        let sut = SettingGameViewModel(userDefaults: .standard)
+        let standardTests = UserDefaults()
+        let sut = SettingGameViewModel(userDefaults: standardTests)
         sut.resetResultMatch()
         
         let elements = UserDefaults.standard.string(forKey:  "elements")

@@ -24,7 +24,8 @@ final class HomeGameViewModelTests: XCTestCase {
         UserDefaults.standard.set(50, forKey: "level")
         UserDefaults.standard.set("01:10:20", forKey: "time")
         
-        let sut = HomeGameViewModel(userDefaults: .standard)
+        let standardTests = UserDefaults()
+        let sut = HomeGameViewModel(userDefaults: standardTests)
         let spy = HomeGameViewModelOutputSpy()
         sut.delegate = spy
         sut.updateResult()
@@ -37,7 +38,8 @@ final class HomeGameViewModelTests: XCTestCase {
     func test_check_saveResultButtons() {
         UserDefaults.standard.set("10", forKey: "button")
         
-        let sut = HomeGameViewModel(userDefaults: .standard)
+        let standardTests = UserDefaults()
+        let sut = HomeGameViewModel(userDefaults: standardTests)
         XCTAssert( sut.saveResultButtons() == "10")
     }
 }

@@ -23,11 +23,8 @@
 		DAC4581B29F89409000E0E4F /* ButtonsGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC4581A29F89409000E0E4F /* ButtonsGameView.swift */; };
 		DACB43C029F832B5007012FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACB43BF29F832B5007012FD /* AppDelegate.swift */; };
 		DACB43C229F832B5007012FD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACB43C129F832B5007012FD /* SceneDelegate.swift */; };
-		DACB43C429F832B5007012FD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACB43C329F832B5007012FD /* ViewController.swift */; };
-		DACB43C729F832B5007012FD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DACB43C529F832B5007012FD /* Main.storyboard */; };
 		DACB43C929F832B7007012FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DACB43C829F832B7007012FD /* Assets.xcassets */; };
 		DACB43CC29F832B7007012FD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DACB43CA29F832B7007012FD /* LaunchScreen.storyboard */; };
-		DACB43D729F832B7007012FD /* GameMemoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACB43D629F832B7007012FD /* GameMemoryTests.swift */; };
 		DACB43E129F832B7007012FD /* GameMemoryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACB43E029F832B7007012FD /* GameMemoryUITests.swift */; };
 		DACB43E329F832B7007012FD /* GameMemoryUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACB43E229F832B7007012FD /* GameMemoryUITestsLaunchTests.swift */; };
 		DACB43F229F833C2007012FD /* HomeGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACB43F129F833C2007012FD /* HomeGameViewController.swift */; };
@@ -44,7 +41,6 @@
 		DADA97092A37EFD900B660A7 /* PlayGamesViewModelOutputSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADA97082A37EFD900B660A7 /* PlayGamesViewModelOutputSpy.swift */; };
 		DAE013262A30CF2200A8C7EB /* HomeGameViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE013252A30CF2200A8C7EB /* HomeGameViewModelTests.swift */; };
 		DAE507042A337CC100B24A51 /* HomeGameViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE507032A337CC100B24A51 /* HomeGameViewControllerTests.swift */; };
-		DAE507072A337E0500B24A51 /* SpyNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE507062A337E0500B24A51 /* SpyNavigationController.swift */; };
 		DAE507092A33D90100B24A51 /* HomeGameViewModelInputSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE507082A33D90100B24A51 /* HomeGameViewModelInputSpy.swift */; };
 		DAE5070C2A33DFAF00B24A51 /* SettingGameViewControllerDelegateSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE5070B2A33DFAF00B24A51 /* SettingGameViewControllerDelegateSpy.swift */; };
 		DAE5070F2A33EFC300B24A51 /* HomeGameViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE5070E2A33EFC300B24A51 /* HomeGameViewTests.swift */; };
@@ -88,13 +84,10 @@
 		DACB43BC29F832B5007012FD /* GameMemory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GameMemory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DACB43BF29F832B5007012FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DACB43C129F832B5007012FD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		DACB43C329F832B5007012FD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		DACB43C629F832B5007012FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DACB43C829F832B7007012FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DACB43CB29F832B7007012FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DACB43CD29F832B7007012FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DACB43D229F832B7007012FD /* GameMemoryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GameMemoryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DACB43D629F832B7007012FD /* GameMemoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMemoryTests.swift; sourceTree = "<group>"; };
 		DACB43DC29F832B7007012FD /* GameMemoryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GameMemoryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DACB43E029F832B7007012FD /* GameMemoryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMemoryUITests.swift; sourceTree = "<group>"; };
 		DACB43E229F832B7007012FD /* GameMemoryUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMemoryUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -112,7 +105,6 @@
 		DADA97082A37EFD900B660A7 /* PlayGamesViewModelOutputSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayGamesViewModelOutputSpy.swift; sourceTree = "<group>"; };
 		DAE013252A30CF2200A8C7EB /* HomeGameViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeGameViewModelTests.swift; sourceTree = "<group>"; };
 		DAE507032A337CC100B24A51 /* HomeGameViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeGameViewControllerTests.swift; sourceTree = "<group>"; };
-		DAE507062A337E0500B24A51 /* SpyNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpyNavigationController.swift; sourceTree = "<group>"; };
 		DAE507082A33D90100B24A51 /* HomeGameViewModelInputSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeGameViewModelInputSpy.swift; sourceTree = "<group>"; };
 		DAE5070B2A33DFAF00B24A51 /* SettingGameViewControllerDelegateSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingGameViewControllerDelegateSpy.swift; sourceTree = "<group>"; };
 		DAE5070E2A33EFC300B24A51 /* HomeGameViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeGameViewTests.swift; sourceTree = "<group>"; };
@@ -190,8 +182,6 @@
 				DACB43EF29F83397007012FD /* Feature */,
 				DACB43BF29F832B5007012FD /* AppDelegate.swift */,
 				DACB43C129F832B5007012FD /* SceneDelegate.swift */,
-				DACB43C329F832B5007012FD /* ViewController.swift */,
-				DACB43C529F832B5007012FD /* Main.storyboard */,
 				DACB43C829F832B7007012FD /* Assets.xcassets */,
 				DACB43CA29F832B7007012FD /* LaunchScreen.storyboard */,
 				DACB43CD29F832B7007012FD /* Info.plist */,
@@ -203,7 +193,6 @@
 			isa = PBXGroup;
 			children = (
 				DAE013232A30CEDB00A8C7EB /* Feature */,
-				DACB43D629F832B7007012FD /* GameMemoryTests.swift */,
 			);
 			path = GameMemoryTests;
 			sourceTree = "<group>";
@@ -287,7 +276,6 @@
 				DABCB8332A3A3E9A0036082D /* ProcessData */,
 				DADA97042A37DFD800B660A7 /* PlayGame */,
 				DAE507122A33FA2F00B24A51 /* Fixture */,
-				DAE507052A337DDE00B24A51 /* Doubles */,
 				DAE013242A30CEE800A8C7EB /* HomeGameTests */,
 				DAE5070A2A33DF6300B24A51 /* SettingsGameTests */,
 			);
@@ -303,14 +291,6 @@
 				DAE5070E2A33EFC300B24A51 /* HomeGameViewTests.swift */,
 			);
 			path = HomeGameTests;
-			sourceTree = "<group>";
-		};
-		DAE507052A337DDE00B24A51 /* Doubles */ = {
-			isa = PBXGroup;
-			children = (
-				DAE507062A337E0500B24A51 /* SpyNavigationController.swift */,
-			);
-			path = Doubles;
 			sourceTree = "<group>";
 		};
 		DAE5070A2A33DF6300B24A51 /* SettingsGameTests */ = {
@@ -466,7 +446,6 @@
 			files = (
 				DACB43CC29F832B7007012FD /* LaunchScreen.storyboard in Resources */,
 				DACB43C929F832B7007012FD /* Assets.xcassets in Resources */,
-				DACB43C729F832B5007012FD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -491,7 +470,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DACB43C429F832B5007012FD /* ViewController.swift in Sources */,
 				DAB9AC302A12F48900530914 /* SettingGameViewController.swift in Sources */,
 				DACB43F429F83473007012FD /* HomeGameView.swift in Sources */,
 				DA0B86032A1435B500A9F0EF /* HomeGameLevelView.swift in Sources */,
@@ -523,7 +501,6 @@
 				DADA96FF2A37A3DE00B660A7 /* SettingGameViewTests.swift in Sources */,
 				DADA97092A37EFD900B660A7 /* PlayGamesViewModelOutputSpy.swift in Sources */,
 				DAE507112A33F05C00B24A51 /* HomeGameViewDelegateSpy.swift in Sources */,
-				DACB43D729F832B7007012FD /* GameMemoryTests.swift in Sources */,
 				DADA97062A37E02000B660A7 /* PlayGameViewModelTests.swift in Sources */,
 				DAB775BD2A38AA180081961A /* PlayGamesViewModelInputSpy.swift in Sources */,
 				DAF66AF42A3104BF00B5D78A /* HomeGameViewModelOutputSpy.swift in Sources */,
@@ -531,7 +508,6 @@
 				DA1726DF2A38EAE90030093F /* PlayGameViewControllerTests.swift in Sources */,
 				DAE5070F2A33EFC300B24A51 /* HomeGameViewTests.swift in Sources */,
 				DABCB8352A3A3EC80036082D /* ProcessDataTests.swift in Sources */,
-				DAE507072A337E0500B24A51 /* SpyNavigationController.swift in Sources */,
 				DAE507142A33FAE600B24A51 /* HomeGameModelFixtures.swift in Sources */,
 				DADA97012A37A6EF00B660A7 /* SettingGameViewSpy.swift in Sources */,
 				DAE507042A337CC100B24A51 /* HomeGameViewControllerTests.swift in Sources */,
@@ -565,14 +541,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		DACB43C529F832B5007012FD /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DACB43C629F832B5007012FD /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		DACB43CA29F832B7007012FD /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -709,7 +677,6 @@
 				INFOPLIST_FILE = GameMemory/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -736,7 +703,6 @@
 				INFOPLIST_FILE = GameMemory/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
