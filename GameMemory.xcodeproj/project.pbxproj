@@ -18,6 +18,10 @@
 		DAB9AC2B2A12B5DF00530914 /* InformationPlayGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB9AC2A2A12B5DF00530914 /* InformationPlayGameView.swift */; };
 		DAB9AC302A12F48900530914 /* SettingGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB9AC2F2A12F48900530914 /* SettingGameViewController.swift */; };
 		DABCB8352A3A3EC80036082D /* ProcessDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABCB8342A3A3EC80036082D /* ProcessDataTests.swift */; };
+		DAC1BADE2A3EA141003B0F8C /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC1BADD2A3EA141003B0F8C /* AppCoordinator.swift */; };
+		DAC1BAE02A3EA298003B0F8C /* HomeGameCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC1BADF2A3EA298003B0F8C /* HomeGameCoordinator.swift */; };
+		DAC1BAE22A3EA5AC003B0F8C /* SettingGameCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC1BAE12A3EA5AC003B0F8C /* SettingGameCoordinator.swift */; };
+		DAC1BAE42A3EAE12003B0F8C /* PlayGameCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC1BAE32A3EAE12003B0F8C /* PlayGameCoordinator.swift */; };
 		DAC4581729F85A95000E0E4F /* PlayGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC4581629F85A95000E0E4F /* PlayGameViewController.swift */; };
 		DAC4581929F85CA7000E0E4F /* PlayGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC4581829F85CA7000E0E4F /* PlayGameView.swift */; };
 		DAC4581B29F89409000E0E4F /* ButtonsGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC4581A29F89409000E0E4F /* ButtonsGameView.swift */; };
@@ -78,6 +82,10 @@
 		DAB9AC2A2A12B5DF00530914 /* InformationPlayGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationPlayGameView.swift; sourceTree = "<group>"; };
 		DAB9AC2F2A12F48900530914 /* SettingGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingGameViewController.swift; sourceTree = "<group>"; };
 		DABCB8342A3A3EC80036082D /* ProcessDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessDataTests.swift; sourceTree = "<group>"; };
+		DAC1BADD2A3EA141003B0F8C /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		DAC1BADF2A3EA298003B0F8C /* HomeGameCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeGameCoordinator.swift; sourceTree = "<group>"; };
+		DAC1BAE12A3EA5AC003B0F8C /* SettingGameCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingGameCoordinator.swift; sourceTree = "<group>"; };
+		DAC1BAE32A3EAE12003B0F8C /* PlayGameCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayGameCoordinator.swift; sourceTree = "<group>"; };
 		DAC4581629F85A95000E0E4F /* PlayGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayGameViewController.swift; sourceTree = "<group>"; };
 		DAC4581829F85CA7000E0E4F /* PlayGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayGameView.swift; sourceTree = "<group>"; };
 		DAC4581A29F89409000E0E4F /* ButtonsGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsGameView.swift; sourceTree = "<group>"; };
@@ -144,6 +152,7 @@
 				DAB9AC2F2A12F48900530914 /* SettingGameViewController.swift */,
 				DA0B85FE2A13DFB200A9F0EF /* SettingGameView.swift */,
 				DA0B86002A13F75D00A9F0EF /* SettingGameViewModel.swift */,
+				DAC1BAE12A3EA5AC003B0F8C /* SettingGameCoordinator.swift */,
 			);
 			path = SettingsGame;
 			sourceTree = "<group>";
@@ -154,6 +163,14 @@
 				DABCB8342A3A3EC80036082D /* ProcessDataTests.swift */,
 			);
 			path = ProcessData;
+			sourceTree = "<group>";
+		};
+		DAC1BADC2A3EA094003B0F8C /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				DAC1BADD2A3EA141003B0F8C /* AppCoordinator.swift */,
+			);
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 		DACB43B329F832B5007012FD = {
@@ -209,6 +226,7 @@
 		DACB43EF29F83397007012FD /* Feature */ = {
 			isa = PBXGroup;
 			children = (
+				DAC1BADC2A3EA094003B0F8C /* Coordinator */,
 				DAB9AC2C2A12F43C00530914 /* SettingsGame */,
 				DAE8B3312A047B9E00406119 /* ProcessData */,
 				DACD2CC929F99C0E00C7B83C /* Model */,
@@ -225,6 +243,7 @@
 				DACB43F329F83473007012FD /* HomeGameView.swift */,
 				DAB228CA2A057AC9005EB72A /* HomeGameViewModel.swift */,
 				DA0B86022A1435B500A9F0EF /* HomeGameLevelView.swift */,
+				DAC1BADF2A3EA298003B0F8C /* HomeGameCoordinator.swift */,
 			);
 			path = HomeGame;
 			sourceTree = "<group>";
@@ -238,6 +257,7 @@
 				DACD2AA829F94BB0001E51DF /* ButtonsGameCell.swift */,
 				DAB9AC2A2A12B5DF00530914 /* InformationPlayGameView.swift */,
 				DACD2CC729F99BA300C7B83C /* PlayGamesViewModel.swift */,
+				DAC1BAE32A3EAE12003B0F8C /* PlayGameCoordinator.swift */,
 			);
 			path = PlayGame;
 			sourceTree = "<group>";
@@ -472,6 +492,7 @@
 			files = (
 				DAB9AC302A12F48900530914 /* SettingGameViewController.swift in Sources */,
 				DACB43F429F83473007012FD /* HomeGameView.swift in Sources */,
+				DAC1BAE42A3EAE12003B0F8C /* PlayGameCoordinator.swift in Sources */,
 				DA0B86032A1435B500A9F0EF /* HomeGameLevelView.swift in Sources */,
 				DAC4581729F85A95000E0E4F /* PlayGameViewController.swift in Sources */,
 				DAB228CB2A057AC9005EB72A /* HomeGameViewModel.swift in Sources */,
@@ -485,7 +506,10 @@
 				DAB228CD2A057C20005EB72A /* HomeGameModel.swift in Sources */,
 				DA0B86012A13F75D00A9F0EF /* SettingGameViewModel.swift in Sources */,
 				DAB9AC2B2A12B5DF00530914 /* InformationPlayGameView.swift in Sources */,
+				DAC1BAE02A3EA298003B0F8C /* HomeGameCoordinator.swift in Sources */,
+				DAC1BADE2A3EA141003B0F8C /* AppCoordinator.swift in Sources */,
 				DACD2AA929F94BB0001E51DF /* ButtonsGameCell.swift in Sources */,
+				DAC1BAE22A3EA5AC003B0F8C /* SettingGameCoordinator.swift in Sources */,
 				DACD2CCB29F99C2B00C7B83C /* PlayGameModel.swift in Sources */,
 				DA66A4882A05428C0072FDEC /* ProcessData.swift in Sources */,
 			);
