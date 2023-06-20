@@ -22,4 +22,12 @@ class HomeGameViewModelInputSpy: HomeGameViewModelInput {
         checkPassedSaveResultButtons = true
         return ""
     }
+    
+    func navigationSettingGame(delegate: SettingGameViewControllerDelegate) {
+        //
+    }
+    
+    func navigationPlayGame() {
+        //
+    }
 }

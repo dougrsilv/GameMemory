@@ -46,24 +46,11 @@ class HomeGameViewController: UIViewController {
 extension HomeGameViewController: HomeGameViewOutput {
     
     func clickButtonConfiguration() {
-        let viewModel = SettingGameViewModel()
-        let settingGameViewController = SettingGameViewController(viewModel: viewModel)
-        settingGameViewController.delegate = self
-        let navBarOnModal: UINavigationController = UINavigationController(rootViewController: settingGameViewController)
-        if let sheet = navBarOnModal.sheetPresentationController {
-            sheet.detents = [.custom(resolver: { context in
-                0.6 * context.maximumDetentValue
-            }), .large()]
-        }
-        navigationController?.present(navBarOnModal, animated: false)
+        viewModel.navigationSettingGame(delegate: self)
     }
     
     func clickButtonStartGame() {
-        let viewModel = PlayGamesViewModel(count: viewModel.saveResultButtons())
-        let playGameViewController = PlayGameViewController(viewModel: viewModel)
-        let navBarOnModal: UINavigationController = UINavigationController(rootViewController: playGameViewController)
-        navBarOnModal.modalPresentationStyle = .fullScreen
-        navigationController?.present(navBarOnModal, animated: false)
+        viewModel.navigationPlayGame()
     }
 }
 

@@ -59,7 +59,7 @@ class PlayGamesViewModel: PlayGamesViewModelInput {
     weak var delegate: PlayGamesViewModelOutput?
     
     init(count: String) {
-        for countCicle in 1...(Int(count) ?? 0) {
+        for countCicle in 1...(Int(count) ?? 1) {
             let model = PlayGameModel(count: countCicle)
             self.playGameModel.append(model)
         }
